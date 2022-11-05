@@ -6,26 +6,34 @@
         <link rel="stylesheet" type="text/css" href="login.css" />
     </head>
     <body>
-        <div id="header" class="txt">
-            <h1><b>Welcome to GTM 2.0</b></h1>
-            <h3>Please sign in to begin</h3>
-        </div>
-        <div id="setting_but">
+        <div id="window">
             <a href="setting.html">
-                <img src="setting_icon.png" alt="Setting" />
+                <img id="setting_icon" src="./setting_icon.png" alt="Setting" />
             </a>
-        </div>
-        <form method="post">
-            <div id="login_portal" class="txt">
-                <label>Username</br></label>
-                <input type="text" id="username" required/>
-                
-                <label></br>Password</br></label>
-                <input type="password" id="password" required/>
-                </br>
-                <input id="login_but" type="submit" value="Login"/>
+            <div>
+                <h1 class="header">
+                    <b class="header">Welcome to GTM 2.0</b>
+                </h1>
+                <h3 class="header">Please sign in to begin</h3>
             </div>
-
-        </form>
+            <form method="post">
+                <div id="login">
+                    <div>
+                        <label>Username</label>
+                        </br>
+                        <input class="text" type="text" required/>
+                    </div>
+                    </br>
+                    <div>
+                        <label>Password</label>
+                        </br>
+                        <input class="text" type="password" required/>
+                    </div>
+                    </br>
+                    <input id="data" type="submit" value="Login"/>
+                </div>
+    
+            </form>
+        </div>
     </body>
 </html>
