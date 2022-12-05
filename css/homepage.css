@@ -65,3 +65,19 @@
     right: 10%;
     top: 40%;
 }
+
+#breakin{
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    color: white;
+}
+
+.brk{
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: red;
+    text-align: center;
+    width: 20%;
+    height: 10%;
+}
