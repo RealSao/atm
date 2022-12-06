@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class Register {
     }
 
     //register user
-    public void register(){
+    public void register() throws FileNotFoundException{
         Scanner in = new Scanner(System.in);
 
         //add in associated bank account with this user

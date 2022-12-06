@@ -1,8 +1,9 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class login {
     //Login Page
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(System.in);
         String username, password, choice;
         Bank b = new Bank(); 
@@ -61,6 +62,7 @@ public class login {
             }
         }while(!choice.equals("y"));
         System.out.println("\nHave a good day!");
+        b.updateDB();
 
         //in.close();
     }
