@@ -3,12 +3,12 @@
     <head>
         <title>Global Teller Machine 2.0</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="http://127.0.0.1:1337/css/homepage.css" />
+        <link rel="stylesheet" type="text/css" href="../css/homepage.css" />
     </head>
     <body>
         <div id="window">
             <div>
-                <p><b id="header">Home Page</b><a href="setting.html"><img id="setting_icon" src="http://127.0.0.1:1337/assets/setting_icon.png" alt="setting_icon"/></a></p>
+                <p><b id="header">Home Page</b><a href="setting.html"><img id="setting_icon" src="../assets/setting_icon.png" alt="setting_icon"/></a></p>
             </div>
             <div id="subheader">
                 <p>Please choose your service</p>
@@ -21,26 +21,26 @@
                         //find each element(services button)
                         var transfer = document.getElementById('transfer');
                         transfer.onclick = function(){
-                            window.open('http://127.0.0.1:1337/html/transfer.html', "_self");
+                            window.open('./transfer.html', "_self");
                         }
 
                         var deposit = document.getElementById('deposit');
                         deposit.onclick = function(){
-                            window.open('http://127.0.0.1:1337/html/deposit.html', "_self");
+                            window.open('./deposit.html', "_self");
                         }
 
                         var withdraw = document.getElementById('withdraw');
                         withdraw.onclick = function(){
-                            window.open('http://127.0.0.1:1337/html/withdraw.html', "_self");
+                            window.open('./withdraw.html', "_self");
                         }
 
                         var view = document.getElementById('view');
                         view.onclick = function(){
-                            window.open('http://127.0.0.1:1337/html/view.html', "_self");
+                            window.open('./view.html', "_self");
                         }
                         var breakin = document.getElementById('breakin');
                         breakin.ondblclick = function(){
-                            window.open('http://127.0.0.1:1337/html/breakin.html', "_self");
+                            window.open('./breakin.html', "_self");
                         }
                     }
                 </script>
