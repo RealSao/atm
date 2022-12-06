@@ -3,6 +3,7 @@
 # Fixed some error caused by invalid input (add input validation)
 # Make the code cooperate with self build database
 # Add "add account" feature
+# Add break in feature in the UI: Simulate someone breaks the ATM
 
 # The GUI is in the html folder
 # Procedure to run:
@@ -11,6 +12,7 @@
 # You should be able to switch between login and register page
 # To view any other pages, clicks on the homepage.html and runs it
 # You should be able to redirect to any page with the correct button clicked
+
 
 # The Demo of the project is in the PartialFunction folder
 # Procedure to run:
