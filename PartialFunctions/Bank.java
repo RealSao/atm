@@ -1,3 +1,4 @@
+import java.security.KeyStore.Entry;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -16,4 +17,28 @@ public class Bank {
     }
 
     public HashMap<User, ArrayList<Account>> getMap() { return map; }
+
+    public boolean verifyUsername(String username){
+        for(User u: map.keySet()){
+            if(u.getUsername().equals(username))
+                return true;
+        }
+        return false;
+    }
+
+    public boolean verifyPassword(String password){
+        for(User u: map.keySet()){
+            if(u.getPassword().equals(password))
+                return true;
+        }
+        return false;
+    }
+
+    public User getUser(String username){
+        for(User u: map.keySet()){
+            if(u.getUsername().equals(username))
+                return u;
+        }
+        return null;
+    }
 }

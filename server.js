@@ -23,12 +23,12 @@ function connected() {
 //routes
 ///home
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/views/home.html");
+    res.sendFile(__dirname + "/html/home.html");
 });
 
 //register form
 app.get("/register", function (req, res) {
-    res.sendFile(__dirname + "/views/register.html");
+    res.sendFile(__dirname + "/html/register.html");
 });
 
 app.post("/register", function (req, res) {
@@ -46,13 +46,13 @@ app.post("/register", function (req, res) {
                     message: err
                 });
             return;
-        } else res.sendFile(__dirname + "/views/homepage.html");
+        } else res.sendFile(__dirname + "/html/homepage.html");
     });
 });
 //login form
 
 app.get('/login', function (req, res) {
-    res.sendFile(__dirname + "/views/login.html")
+    res.sendFile(__dirname + "/html/login.html")
 })
 
 //

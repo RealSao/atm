@@ -18,20 +18,29 @@ public class login {
             //Database haven't done
             //Treat only valid as match in database
             if(!username.equals("") && !password.equals("")){
-                if(username.equals("valid")){ //user exist
+                if(b.verifyUsername(username)){ //user exist
                     //Go to homepage
-                    User user = new User(username, password, b);
-                    user.service();
+                    if(b.verifyPassword(password)){
+                        User user = b.getUser(username);
+                        if(user == null){
+                            user = new User(username, password, b);
+                        }
+                        user.service();
+                    }
+                    else{
+                        System.out.println("\nInvalid password");
+                    }
                 }
                 else{
                     //Create User
+                    System.out.println("\nNo such user, please register to continue");
                     Register r = new Register(username, password);
                     r.register();
                 }
             }
             else{
                 //Display error message when invalid input
-                System.out.println("Invalid input, please try again");
+                System.out.println("\nInvalid input, please try again");
                 System.out.println("Do you want to leave? reply 'y' or 'n'");
                 choice = in.next();
                 if(!choice.equals("y"))
@@ -40,12 +49,18 @@ public class login {
                     break;
             }
             
-            System.out.println("You have logout");
+            System.out.println("\nYou have logout");
             System.out.println("Do you want to leave? reply 'y' or 'n'");
             choice = in.next();
             in.nextLine(); //clear buffer
+            while(!choice.equals("y") && !choice.equals("n")){
+                System.out.println("\nInvalid input");
+                System.out.println("Please enter again");
+                choice = in.next();
+                in.nextLine();
+            }
         }while(!choice.equals("y"));
-        System.out.println("Have a good day!");
+        System.out.println("\nHave a good day!");
 
         //in.close();
     }

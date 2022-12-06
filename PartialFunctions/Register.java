@@ -16,7 +16,7 @@ public class Register {
         Scanner in = new Scanner(System.in);
 
         //add in associated bank account with this user
-        System.out.println("Please add in your accounts");
+        System.out.println("\nPlease add in your accounts");
 
         ArrayList<Account> accList = addBankInfo();
         User user = new User(username, password, accList);
@@ -38,10 +38,21 @@ public class Register {
         ArrayList<Account> accList = new ArrayList<>();
         //allow multiple account to be entered
         do{
-            System.out.println("Enter your bank account number");
+            System.out.println("\nEnter your bank account number (8 digits)");
             String accNum = in.nextLine();
+            while(accNum.length() != 8){
+                System.out.println("\nInvalid input");
+                System.out.println("Please enter again");
+                accNum = in.nextLine();
+            }
             System.out.println("Enter your balance");
             double balance = in.nextDouble();
+            while(balance < 0){
+                System.out.println("\nInvalid input");
+                System.out.println("Please enter again");
+                balance = in.nextDouble();
+            }
+            in.nextLine();
 
 
             Account acc = new Account(balance, accNum);
@@ -49,9 +60,15 @@ public class Register {
                 accList.add(acc);
             }
 
-            System.out.println("Do you have next account to add? reply 'y' or 'n'");
+            System.out.println("\nDo you have next account to add? reply 'y' or 'n'");
             choice = in.next();
             in.nextLine();
+            while(!choice.equals("y") && !choice.equals("n")){
+                System.out.println("\nInvalid input");
+                System.out.println("Please enter again");
+                choice = in.next();
+                in.nextLine();
+            }
         }while(!choice.equals("n"));
 
         //in.close();
@@ -64,10 +81,10 @@ public class Register {
         for(Account a: accList){
             if(a.getAccNum().equals(acc.getAccNum())){ //account exist
                 if(a.getBalance() != acc.getBalance()){ //differ in balance
-                    System.out.println("You might enter the wrong bank account number");
+                    System.out.println("\nYou might enter the wrong bank account number");
                 }
                 else{
-                    System.out.println("This account already exist");
+                    System.out.println("\nThis account already exist");
                 }
                 return true;
             }
